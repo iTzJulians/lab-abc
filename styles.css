@@ -4,7 +4,104 @@
     padding:0;
     box-sizing:border-box;
 }
+
+.filtros {
+    margin-bottom: 25px;
+    margin-top: 100px;
+}
+
+.filtros button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background-color: #0056b3;
+}
+
+
+#contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 100px;
+}
+
+.card{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.volteada .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-frente, .card-dorso{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background-color: rgb(111, 175, 215);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.card-frente {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.card-frente h1{
+    font-size: 70px;
+    margin: 0;
+}
+
+.card-dorso{
  
+    flex-direction: column;
+    transform: rotateY(180deg);
+}
+
+.card-dorso img{
+    width: 70%;
+    height: fit-content;
+
+    border-radius: 8px;
+
+}
+
+.card-dorso h3{
+    font-size: 10px;
+    margin: 4px 0 0 0;
+    text-align: center;
+}
+
+
+
 
 main{
     width:90%;
@@ -47,23 +144,6 @@ body {
     padding: 20px;
 }
 
-.filtros {
-    margin-bottom: 20px;
-}
-
-.filtros button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.filtros button:hover {
-    background-color: #0056b3;
-}
 
 .equipo {
     background-color: white;
@@ -93,3 +173,12 @@ body {
 .equipo li:last-child {
     border-bottom: none;
 }
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h3{
+    margin: 0 10px;
+}
+
